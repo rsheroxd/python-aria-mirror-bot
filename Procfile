@@ -1,1 +1,1 @@
-worker: bash aria.sh
+worker: bash start.sh
