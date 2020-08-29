@@ -39,12 +39,12 @@ extract() {
     ;;
   *.zip)
     a_dir=$(expr "$arg" : '\(.*\).zip')
-    7z x "$arg" -o"$a_dir"
+    unzip x "$arg" -o"$a_dir"
     local code=$?
     ;;
   *.7z)
     a_dir=$(expr "$arg" : '\(.*\).7z')
-    7z x "$arg" -o"$a_dir"
+    unzip x "$arg" -o"$a_dir"
     local code=$?
     ;;
   *.Z)
@@ -54,7 +54,7 @@ extract() {
   *.rar)
     a_dir=$(expr "$arg" : '\(.*\).rar')
     mkdir "$a_dir"
-    7z x "$arg" -o"$a_dir"
+    unzip x "$arg" -o"$a_dir"
     local code=$?
     ;;
   *)
