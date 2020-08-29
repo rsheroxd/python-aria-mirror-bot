@@ -74,7 +74,7 @@ class MirrorListener(listeners.MirrorListeners):
                 )
                 with download_dict_lock:
                     download_dict[self.uid] = ExtractStatus(name, m_path, size)
-                archive_result = subprocess.run(["extract", m_path])
+                archive_result = subprocess.run(["app/extract", m_path])
                 if archive_result.returncode == 0:
                     threading.Thread(target=os.remove, args=(m_path,)).start()
                     LOGGER.info(f"Deleting archive : {m_path}")
